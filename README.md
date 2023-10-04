@@ -7,15 +7,25 @@
 </div>
 
 # Currency Converter
+
   This repository contains a versatile and easy-to-use currency converter application written in JavaScript. With this tool, you can effortlessly convert between various international currencies, making it a valuable resource for travelers, businesses, and anyone dealing with global finance. The application fetches real-time exchange rates from a reliable API, ensuring accuracy in your conversions. 
   Explore the world of hassle-free currency conversion with this open-source project and adapt it to your needs.
 
-  This Web app uses  **API Ninja** to get the exchange value for the amount entered.It used **playwight** for testing and **sass** for styling. Even though it's a small project.using using this libraries will give beginners about its application.
+  This Web app uses  **API Ninja** to get the exchange value for the amount entered.It used **Playwight** for testing and **sass** for styling. Even though it's a small project.using using this libraries will give beginners about its application.
   
+  ### Features
+
+  - Real-time currency exchange rates.
+  - Support for a wide range of international currencies.
+  - Easy-to-use web interface.
+  - Customizable and extensible codebase.
+  - Open-source and community-driven development.
+
+### Feel free to customize this description to match the specifics of your currency converter project on GitHub.  
 
 ## Local Setup
 
-This project uses **Vite** is the written in javascript user npm and node.js as runtime.
+This project uses **Vite**.
 
 1. clone the repo by this command.
     ``` bash
@@ -29,7 +39,7 @@ This project uses **Vite** is the written in javascript user npm and node.js as 
     ``` bash
         npm install
     ```
-3. Run Localy
+4. Run Localy
     ``` bash
         npm run dev
     ```
