@@ -47,3 +47,10 @@
   font-weight: 700;
   border-radius: 10px;
 }
+
+@media screen and  (max-width:821px) {
+  .box {
+    margin: 39px;
+  }
+}
+

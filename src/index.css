@@ -14,3 +14,17 @@ ul > li {
 a {
     text-decoration: none;
 }
+
+@media screen and  (max-width:821px) {
+    .main{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:414px) {
+    * {
+        margin-left: 100px;
+        margin-right: auto;
+    }
+  }
