@@ -1,17 +1,20 @@
+import { useState } from 'react';
 import './box.css'
 
+
 export default function box() {
+    const [new_amount, setNew_Amount] = useState("...");
     return (
         <div>
             <div className="center-box">
                 <div className="box">
-                    <h1>Currency Converter</h1>
-                    
-                    <form>
+                    <h1 style={{marginLeft:"7px"}}>Currency Converter</h1>
+
+                    <form onSubmit={submitHandler}>
                         <div className="input-area">
                             <select name="have" id="cur_have">
                                 <option defaultValue=""> Choose </option>
-                                <option value="INR">Indian Rupees</option>                               
+                                <option value="INR">Indian Rupees</option>
                                 <option value="JPY">Japanese Yen</option>
                                 <option value="BRL">Brazilian real </option>
                                 <option value="FJD">Fijian dollar</option>
@@ -35,7 +38,7 @@ export default function box() {
                             <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
                             <select name="want" id="cur_want" >
                                 <option defaultValue=""> Choose </option>
-                                <option value="INR">Indian Rupees</option>                               
+                                <option value="INR">Indian Rupees</option>
                                 <option value="JPY">Japanese Yen</option>
                                 <option value="BRL">Brazilian real </option>
                                 <option value="FJD">Fijian dollar</option>
@@ -57,12 +60,46 @@ export default function box() {
                                 <option value="KWD">Jordanian Dinar</option>
                             </select>
                         </div>
-                        <input className='amount-input' type="number" name="amount" placeholder='amount' />
-                        <button className='convert-btn' onClick={onClickHandler()} >CONVERT</button>
+                        <input className='amount-input' id='amount_input' type="number" name="amount" placeholder='0.0' />
+                        <button className='convert-btn' onClick={async () => {
+                            let cur_have = "";
+                            let cur_want = "";
+                            let amount = "";
+
+                            cur_have = document.getElementById("cur_have").value;
+                            cur_want = document.getElementById("cur_want").value;
+                            amount = document.getElementById("amount_input").value;
+                            if(amount === "") {
+                                alert("Enter a Value");
+                                return;
+                            } 
+                            if(amount < 0) {
+                                alert("Amount Cannot be Negative");
+                                return;
+                            }
+                            if(cur_have === "" || cur_want === "") {
+                                alert("Select the Currency");
+                                return;
+                            }
+                            console.log(cur_have + "\n");
+                            console.log(cur_want + "\n");
+                            console.log(amount + "\n");
+
+                            const URI = `https://api.api-ninjas.com/v1/convertcurrency?have=${cur_have}&want=${cur_want}&amount=${amount}`;
+                            let responce = await fetch(`${URI}`, {
+                                headers: {
+                                    "X-Api-Key": "02BFCzuyhkWx0ylOXJUPVw==VO0ncgVPC77S8tLL"
+                                }
+                            })
+                            let data = await responce.json();
+                            setNew_Amount(data.new_amount + " " + cur_want);
+                        }}>
+                            CONVERT
+                        </button>
                     </form>
 
                     <div className='new-amount'>
-                        <h1>1200.99</h1>
+                        <h1>{new_amount}</h1>
                     </div>
                 </div>
             </div>
@@ -70,34 +107,11 @@ export default function box() {
     )
 }
 
-function onClickHandler() {
-    let cur_have = ""
-    let cur_want = ""
-    let amount = ""
-
-    document.addEventListener('onchange', async() => {
-        cur_have = document.getElementById("cur_have").value
-        cur_want = document.getElementById("cur_want").value
-        amount = document.getElementById("amount-input").value
-
-        fetch_data(cur_have, cur_want, amount)
-
-    })
+function submitHandler(event) {
+    event.preventDefault();
 }
 
-async function fetch_data(have, want, amount) {
-    const URI = `https://api.api-ninjas.com/v1/convertcurrency?have=${have}&want=${want}&amount=${amount}`
-    fetch(`${URI}`,{
-        method:"get",
-        headers: {
-            'X-Api-Key':'02BFCzuyhkWx0ylOXJUPVw==VO0ncgVPC77S8tLL'
-        },
-        body: JSON.stringify({ key: 'value' }),
-    }).then(response => response.json())
-    .then(data => {
-      console.log(data)
-    })
-    .catch(error => {
-      console.error(error)
-    })
-}
+// async function onClickHandler(setNew_Amount) {
+
+//     // document.querySelector('.new-amount').innerHTML = `<h1>${data["new_amount"]}</h1>`
+// }

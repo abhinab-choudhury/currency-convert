@@ -19,14 +19,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 8px;
 }
 
 .input-area > select ,input {
   border-radius: 6px;
   height: 40px;
-  background-color: rgba(233, 249, 242, 0.717);
+  background-color: rgba(233  , 249, 242, 0.717);
   border-color: transparent;
   padding-left: 6px;
+  width: 42%;
 }
 
 .amount-input {
