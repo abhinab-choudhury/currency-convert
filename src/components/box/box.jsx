@@ -95,7 +95,15 @@ export default function box() {
                             })
                             let data = await responce.json();
                             setloading(false);
-                            setNew_Amount(data.new_amount + " " + cur_want);
+
+                            const new_amount = data.new_amount.toLocaleString('en-US', {
+                                style: 'decimal',
+                                useGrouping: true,
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            });
+                            
+                            setNew_Amount(new_amount + " " + cur_want);
                         }}>
                             CONVERT
                         </button>
