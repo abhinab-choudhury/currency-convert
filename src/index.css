@@ -15,6 +15,7 @@ a {
     text-decoration: none;
 }
 
+
 @media screen and (max-width:1030px) {
     .main {
         height: 100%;
@@ -49,6 +50,9 @@ a {
         background-color: rgb(149, 220, 187);
     }
 
+    .input-area {
+        margin: 5px;
+    }
     .input-area > select ,input {
         border-radius: 6px;
         margin-top: 10px;
