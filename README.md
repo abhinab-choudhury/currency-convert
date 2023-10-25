@@ -4,7 +4,9 @@
   <img style="margin-right:20px;" width="100" height="100" src="./src/assets/react.svg">
 </div>
 
-# Currency Converter
+# Currency Converter 
+
+<a href="https://abhinab-choudhury.github.io/currency-convert/">Live</a>
 
   This repository contains a versatile and easy-to-use currency converter application written in JavaScript. With this tool, you can effortlessly convert between various international currencies, making it a valuable resource for travelers, businesses, and anyone dealing with global finance. The application fetches real-time exchange rates from a reliable API, ensuring accuracy in your conversions. 
   Explore the world of hassle-free currency conversion with this open-source project and adapt it to your needs.
