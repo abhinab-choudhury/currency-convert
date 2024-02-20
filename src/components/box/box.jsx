@@ -84,10 +84,7 @@ export default function box() {
                 alert("Select the Currency");
                 return;
               }
-              console.log(cur_have + "\n");
-              console.log(cur_want + "\n");
-              console.log(amount + "\n");
-
+             
               const currencyApi = new CurrencyAPI('cur_live_aAEZSLnmkhXAkRbue7O0xaS90UQ2nifCFcfMlPRf');
               let new_amount
               setloading(true)
