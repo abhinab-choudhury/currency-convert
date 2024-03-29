@@ -11,7 +11,7 @@ export default function nav() {
                 <h1>Abhinab Choudhury</h1>
             </li>
             <li>
-            <a className='aline-link' href="https://www.instagram.com/_abhinab_choudhury_/" target="_blank" rel="noopener noreferrer"> 
+            <a className='aline-link' href="https://www.instagram.com/abhinab_choudhury_/" target="_blank" rel="noopener noreferrer"> 
                 <img width="23" height="23" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
                 Instgram
             </a>
